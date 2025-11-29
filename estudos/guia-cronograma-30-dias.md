@@ -1,5 +1,12 @@
 # CRONOGRAMA COMPLETO 30 DIAS - CPA-20
 
+## 🧠 Como maximizar a memorização
+- **Revisão espaçada:** após cada dia, reserve 15-20 minutos para revisar os tópicos do dia anterior (D+1), repita 3-4 dias depois (D+4) e novamente no fim da semana (D+7).
+- **Ativação da lembrança (active recall):** antes de olhar o material, tente listar fórmulas, percentuais e conceitos de memória. Só depois confira no resumo.
+- **Flashcards focados:** organize os cartões por tema e marque os que errar para reaparecerem na próxima sessão de revisão.
+- **Intercalação de assuntos:** mescle 2-3 temas em um mesmo bloco de questões para reforçar diferenciações (ex.: FGC x tributação).
+- **Técnica Feynman rápida:** escolha 1 ponto complexo por dia e explique em voz alta como se fosse ensinar um cliente em 2 minutos; anote lacunas e corrija-as.
+
 ## 🗓️ PLANEJAMENTO SEMANA A SEMANA
 
 ---
@@ -509,14 +516,25 @@
 
 ---
 
+## 🔁 Agenda de revisões rápidas (espaçamento sugerido)
+
+- **D+1:** 15-20 min lembrando conceitos sem olhar o material; só depois confira anotações.
+- **D+4:** 20-25 min reaplicando flashcards errados e refazendo 10-15 questões do tema.
+- **D+7:** 30 min consolidando os pontos críticos da semana em 1 página (resumo ou mapa mental).
+
+💡 Dica: marque no calendário os dias de revisão para cada tópico estudado. Se um tema for muito cobrado (fundos, PLD, FGC), mantenha revisões extras a cada 3 dias até acertar ≥80% das questões.
+
+---
+
 ## ✅ CHECKLIST DIÁRIO
 
 Todo dia marque:
 - [ ] Estudei o conteúdo programado
 - [ ] Resolvi as questões do dia
-- [ ] Revisei flashcards
+- [ ] Revisei flashcards (reforço D+1 ou D+4)
 - [ ] Anotei dúvidas
-- [ ] Analisei erros
+- [ ] Analisei erros e corrigi usando active recall (tente explicar sem consultar)
+- [ ] Fiz 1 miniaplicação da técnica Feynman (explicar em 2 min)
 
 ---
 
