@@ -20,6 +20,7 @@ from typing import Dict, Iterable, List, Optional
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_DATASET = BASE_DIR / "dados" / "questoes_cpa20.csv"
 HISTORICO_PATH = BASE_DIR / "dados" / "historico_respostas.csv"
+REVISAO_DATASET = BASE_DIR / "dados" / "questoes_para_revisao.csv"
 
 VALID_ALTERNATIVES = ("A", "B", "C", "D")
 
@@ -250,15 +251,28 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_DATASET,
         help="Caminho do CSV de questões",
     )
+    parser.add_argument(
+        "--revisao",
+        action="store_true",
+        help="Carrega apenas as questões mais erradas (dados/questoes_para_revisao.csv)",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
 
+    dataset = REVISAO_DATASET if args.revisao else args.arquivo
+
     try:
-        questoes = carregar_questoes(args.arquivo)
+        if args.revisao:
+            print("Modo revisão ativado: carregando questões mais erradas.")
+        questoes = carregar_questoes(dataset)
     except Exception as exc:  # noqa: BLE001 - feedback amigável
+        if args.revisao and not dataset.exists():
+            print(
+                "Arquivo de revisão não encontrado. Gere-o com o script analise_desempenho.py"
+            )
         print(f"Erro ao carregar questões: {exc}")
         return
 

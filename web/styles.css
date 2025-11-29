@@ -285,6 +285,57 @@ body {
 
 .resource-link:hover { text-decoration: underline; }
 
+.question-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.question-status {
+  margin: 6px 0 12px;
+}
+
+.question-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.question-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  background: var(--card);
+  display: grid;
+  gap: 8px;
+}
+
+.question-card h4 {
+  margin: 0;
+}
+
+.question-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.question-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; padding: 32px 24px; }
   .layout, .panel--secondary, .footer { padding: 0 24px 32px; margin: 0; }

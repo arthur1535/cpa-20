@@ -14,6 +14,7 @@
       <p class="subtitle">Centralize seus tópicos-chave, avalie sua confiança e veja onde focar antes da prova.</p>
       <div class="hero__actions">
         <button id="focusWeakBtn" class="btn btn--primary">Focar nos pontos fracos</button>
+        <button id="revisionModeBtn" class="btn btn--ghost">Modo revisão (questões mais erradas)</button>
         <button id="resetBtn" class="btn btn--ghost">Limpar progresso</button>
       </div>
     </div>
@@ -36,6 +37,22 @@
       <div id="topicGrid" class="topics"></div>
     </section>
   </main>
+
+  <section class="panel panel--secondary">
+    <header class="panel__header">
+      <div>
+        <p class="tag tag--muted">Prática rápida</p>
+        <h2>Questões para revisão focada</h2>
+        <p class="subtitle">Carregue o conjunto padrão ou ative o modo revisão para estudar apenas as questões mais erradas.</p>
+      </div>
+    </header>
+    <div class="question-actions">
+      <button id="defaultQuestionsBtn" class="btn btn--ghost">Usar conjunto padrão</button>
+      <button id="revisionQuestionsBtn" class="btn btn--primary">Ativar modo revisão</button>
+    </div>
+    <p id="questionStatus" class="meta question-status">Carregando conjunto inicial...</p>
+    <div id="questionList" class="question-list"></div>
+  </section>
 
   <section class="panel panel--secondary">
     <header class="panel__header">

@@ -177,6 +177,161 @@ const checklistItems = [
 ];
 
 const storageKey = 'cpa20-tracker-v1';
+const defaultQuestionSource = {
+  label: 'conjunto padrão',
+  type: 'json',
+  path: '../data/questions/questions-sample.json',
+};
+
+const revisionQuestionSource = {
+  label: 'modo revisão',
+  type: 'csv',
+  path: '../dados/questoes_para_revisao.csv',
+};
+
+function parseCsvLine(line) {
+  const values = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i += 1) {
+    const char = line[i];
+    const next = line[i + 1];
+
+    if (char === '"' && next === '"') {
+      current += '"';
+      i += 1;
+      continue;
+    }
+
+    if (char === '"') {
+      inQuotes = !inQuotes;
+      continue;
+    }
+
+    if (char === ',' && !inQuotes) {
+      values.push(current.trim());
+      current = '';
+      continue;
+    }
+
+    current += char;
+  }
+
+  values.push(current.trim());
+  return values;
+}
+
+function parseCsvContent(text) {
+  const lines = text
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter(Boolean);
+
+  if (!lines.length) return [];
+
+  const headers = parseCsvLine(lines[0]);
+  return lines.slice(1).map((line) => {
+    const values = parseCsvLine(line);
+    return headers.reduce((acc, header, idx) => {
+      acc[header] = values[idx] ?? '';
+      return acc;
+    }, {});
+  });
+}
+
+function normalizeQuestion(data) {
+  const alternativas =
+    data.alternativas ||
+    ['alternativa_a', 'alternativa_b', 'alternativa_c', 'alternativa_d']
+      .map((key) => data[key])
+      .filter(Boolean);
+
+  const correta = (() => {
+    if (typeof data.resposta_correta === 'number') return data.resposta_correta;
+    const numeric = Number(data.resposta_correta);
+    if (Number.isFinite(numeric) && data.resposta_correta !== '') return numeric;
+    const letter = (data.correta || '').toString().trim().toUpperCase();
+    const index = ['A', 'B', 'C', 'D'].indexOf(letter);
+    return index >= 0 ? index : null;
+  })();
+
+  return {
+    id: data.id,
+    tema: data.tema || data.topic || '',
+    enunciado: data.enunciado || data.pergunta || data.question || '',
+    alternativas,
+    correta,
+    dificuldade: data.nivel || data.dificuldade || '',
+    taxaErro:
+      data.taxa_erro === undefined || data.taxa_erro === ''
+        ? null
+        : Number(data.taxa_erro),
+  };
+}
+
+function renderQuestionList(questions, contextLabel) {
+  const statusEl = document.getElementById('questionStatus');
+  const listEl = document.getElementById('questionList');
+
+  if (!questions.length) {
+    statusEl.textContent = `Nenhuma questão carregada para ${contextLabel}.`;
+    listEl.innerHTML = '';
+    return;
+  }
+
+  statusEl.textContent = `${questions.length} questões carregadas (${contextLabel}).`;
+
+  listEl.innerHTML = questions
+    .map((q) => {
+      const alternativas = (q.alternativas || []).map(
+        (alt, idx) => `<li>${String.fromCharCode(65 + idx)}) ${alt}</li>`,
+      );
+
+      const meta = [
+        q.tema && `<span class="pill">Tema: ${q.tema}</span>`,
+        q.dificuldade && `<span class="pill">Nível: ${q.dificuldade}</span>`,
+        Number.isFinite(q.taxaErro) && `<span class="pill">Taxa de erro: ${(Number(q.taxaErro) * 100).toFixed(0)}%</span>`,
+      ]
+        .filter(Boolean)
+        .join('');
+
+      return `
+        <article class="question-card">
+          <div class="question-meta">${meta}</div>
+          <h4>${q.enunciado}</h4>
+          <ul>${alternativas.join('')}</ul>
+        </article>
+      `;
+    })
+    .join('');
+}
+
+async function loadQuestionBank(source) {
+  const statusEl = document.getElementById('questionStatus');
+  const listEl = document.getElementById('questionList');
+  statusEl.textContent = `Carregando ${source.label}...`;
+  listEl.innerHTML = '';
+
+  try {
+    const response = await fetch(source.path);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const text = await response.text();
+    let questions = [];
+
+    if (source.type === 'json') {
+      questions = JSON.parse(text).map(normalizeQuestion);
+    } else {
+      const rows = parseCsvContent(text);
+      questions = rows.map(normalizeQuestion);
+    }
+
+    renderQuestionList(questions, source.label);
+  } catch (err) {
+    statusEl.textContent = `Não foi possível carregar ${source.label}: ${err.message}`;
+  }
+}
 
 function loadState() {
   try {
@@ -325,6 +480,13 @@ function bindActions(state) {
   document.getElementById('showOnlyWeak').addEventListener('change', () => renderTopics(state));
   document.getElementById('showOnlyMedium').addEventListener('change', () => renderTopics(state));
 
+  const loadRevision = () => loadQuestionBank(revisionQuestionSource);
+  document.getElementById('revisionModeBtn').addEventListener('click', loadRevision);
+  document.getElementById('revisionQuestionsBtn').addEventListener('click', loadRevision);
+  document
+    .getElementById('defaultQuestionsBtn')
+    .addEventListener('click', () => loadQuestionBank(defaultQuestionSource));
+
   document.getElementById('resetBtn').addEventListener('click', () => {
     if (confirm('Apagar progresso salvo?')) {
       localStorage.removeItem(storageKey);
@@ -339,6 +501,7 @@ function init() {
   renderStats(state);
   renderTopics(state);
   renderChecklist(state);
+  loadQuestionBank(defaultQuestionSource);
 }
 
 document.addEventListener('DOMContentLoaded', init);
