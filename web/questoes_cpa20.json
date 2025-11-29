@@ -1,0 +1,158 @@
+[
+  {
+    "id": "fundos-001",
+    "tema": "fundos",
+    "enunciado": "Qual é a periodicidade do come-cotas nos fundos de renda fixa?",
+    "alternativas": [
+      "Mensal",
+      "Semestral (maio e novembro)",
+      "Anual",
+      "A cada trimestre"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "O come-cotas antecipa o IR duas vezes ao ano, em maio e novembro."
+  },
+  {
+    "id": "fundos-002",
+    "tema": "fundos",
+    "enunciado": "Quem é responsável pela guarda dos ativos em um fundo de investimento?",
+    "alternativas": [
+      "Administrador",
+      "Gestor",
+      "Custodiante",
+      "Auditor"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "O custodiante mantém a guarda e liquidação dos ativos do fundo."
+  },
+  {
+    "id": "renda-fixa-001",
+    "tema": "renda_fixa",
+    "enunciado": "Qual título do Tesouro possui remuneração atrelada à taxa Selic?",
+    "alternativas": [
+      "LTN",
+      "NTN-B",
+      "LFT",
+      "NTN-F"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "A LFT é pós-fixada à taxa Selic, reduzindo risco de marcação a mercado."
+  },
+  {
+    "id": "renda-fixa-002",
+    "tema": "renda_fixa",
+    "enunciado": "Qual produto é coberto pelo FGC?",
+    "alternativas": [
+      "Ações",
+      "Debêntures simples",
+      "Caderneta de poupança",
+      "Fundos de investimento"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "Poupança é produto elegível ao FGC, ao contrário de fundos ou ações."
+  },
+  {
+    "id": "renda-variavel-001",
+    "tema": "renda_variavel",
+    "enunciado": "Qual é a alíquota de IR para operações de day trade em ações?",
+    "alternativas": [
+      "10%",
+      "15%",
+      "17,5%",
+      "20%"
+    ],
+    "resposta_correta": 3,
+    "explicacao": "Day trade em ações é tributado a 20% sobre o ganho líquido."
+  },
+  {
+    "id": "renda-variavel-002",
+    "tema": "renda_variavel",
+    "enunciado": "Qual limite mensal de vendas garante isenção de IR para pessoa física em ações?",
+    "alternativas": [
+      "R$ 10 mil",
+      "R$ 15 mil",
+      "R$ 20 mil",
+      "R$ 30 mil"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "Vendas até R$ 20 mil no mês permitem isenção em operações comuns."
+  },
+  {
+    "id": "pld-001",
+    "tema": "pld",
+    "enunciado": "Qual o prazo mínimo recomendado para atualização cadastral de clientes de alto risco?",
+    "alternativas": [
+      "A cada 12 meses",
+      "A cada 24 meses",
+      "Somente quando o cliente solicitar",
+      "Não há prazo definido"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "Clientes de alto risco exigem revisões frequentes, tipicamente anuais."
+  },
+  {
+    "id": "pld-002",
+    "tema": "pld",
+    "enunciado": "Qual órgão recebe comunicações de operações suspeitas no Brasil?",
+    "alternativas": [
+      "CVM",
+      "BACEN",
+      "COAF",
+      "SUSEP"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "Operações suspeitas devem ser comunicadas ao COAF."
+  },
+  {
+    "id": "tributacao-001",
+    "tema": "tributacao",
+    "enunciado": "Qual é a alíquota inicial da tabela regressiva de IR aplicada em previdência?",
+    "alternativas": [
+      "35%",
+      "30%",
+      "25%",
+      "20%"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "Na tabela regressiva, a alíquota começa em 35% e cai ao longo do tempo."
+  },
+  {
+    "id": "tributacao-002",
+    "tema": "tributacao",
+    "enunciado": "Qual produto possui isenção de IR para pessoa física?",
+    "alternativas": [
+      "Fundos de ações",
+      "LCI",
+      "Debêntures simples",
+      "Fundos multimercado"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "LCIs e LCAs são isentas de IR para pessoa física."
+  },
+  {
+    "id": "previdencia-001",
+    "tema": "previdencia",
+    "enunciado": "Qual limite de dedução do PGBL na declaração completa do IR?",
+    "alternativas": [
+      "6% da renda bruta",
+      "8% da renda bruta",
+      "12% da renda bruta",
+      "20% da renda bruta"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "Contribuições ao PGBL podem ser deduzidas até 12% da renda bruta anual."
+  },
+  {
+    "id": "previdencia-002",
+    "tema": "previdencia",
+    "enunciado": "No VGBL, o imposto de renda incide sobre qual base?",
+    "alternativas": [
+      "Somente sobre o valor investido",
+      "Somente sobre os rendimentos",
+      "Sobre valor investido e rendimentos",
+      "Não há incidência de IR"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "No VGBL, a tributação incide apenas sobre os rendimentos na saída."
+  }
+]
