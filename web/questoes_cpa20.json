@@ -3,12 +3,7 @@
     "id": "fundos-001",
     "tema": "fundos",
     "enunciado": "Qual é a periodicidade do come-cotas nos fundos de renda fixa?",
-    "alternativas": [
-      "Mensal",
-      "Semestral (maio e novembro)",
-      "Anual",
-      "A cada trimestre"
-    ],
+    "alternativas": ["Mensal", "Semestral (maio e novembro)", "Anual", "A cada trimestre"],
     "resposta_correta": 1,
     "explicacao": "O come-cotas antecipa o IR duas vezes ao ano, em maio e novembro."
   },
@@ -16,25 +11,95 @@
     "id": "fundos-002",
     "tema": "fundos",
     "enunciado": "Quem é responsável pela guarda dos ativos em um fundo de investimento?",
-    "alternativas": [
-      "Administrador",
-      "Gestor",
-      "Custodiante",
-      "Auditor"
-    ],
+    "alternativas": ["Administrador", "Gestor", "Custodiante", "Auditor"],
     "resposta_correta": 2,
     "explicacao": "O custodiante mantém a guarda e liquidação dos ativos do fundo."
+  },
+  {
+    "id": "fundos-003",
+    "tema": "fundos",
+    "enunciado": "A rentabilidade divulgada ao mercado de um fundo:",
+    "alternativas": ["Considera despesas do fundo E pagas pelo cotista (IR)", "NÃO considera despesas individuais pagas diretamente (IR)", "Não considera despesas de auditoria", "Não considera taxa de administração"],
+    "resposta_correta": 1,
+    "explicacao": "Rentabilidade líquida de taxas do fundo, não do cotista."
+  },
+  {
+    "id": "fundos-004",
+    "tema": "fundos",
+    "enunciado": "Qual é o limite de concentração por emissor em instituição financeira autorizada pelo BACEN?",
+    "alternativas": ["10%", "20%", "50%", "100%"],
+    "resposta_correta": 1,
+    "explicacao": "Máximo 20% do PL em um emissor IF."
+  },
+  {
+    "id": "fundos-005",
+    "tema": "fundos",
+    "enunciado": "Um gestor está comprando LFT, CDB AAA e Debênture CCC. Qual o percentual máximo em cada?",
+    "alternativas": ["100%, 20%, 10%", "20%, 100%, 10%", "100%, 100%, 10%", "20%, 20%, 10%"],
+    "resposta_correta": 0,
+    "explicacao": "Título público 100%, IF 20%, baixo rating 10%."
+  },
+  {
+    "id": "fundos-006",
+    "tema": "fundos",
+    "enunciado": "Um Fundo Renda Fixa Referenciado DI pode usar derivativos para alavancagem?",
+    "alternativas": ["Sim, pode usar para alavancagem", "Sim, é permitido pela CVM", "Não, é vedado qualquer uso de derivativos", "Não para alavancagem, apenas para proteção (hedge)"],
+    "resposta_correta": 3,
+    "explicacao": "Referenciado pode usar derivativo apenas para proteção."
+  },
+  {
+    "id": "fundos-007",
+    "tema": "fundos",
+    "enunciado": "O Administrador Fiduciário em conjunto com o gestor é responsável por:",
+    "alternativas": ["Elaborar todos documentos", "Constituição, administração, funcionamento e divulgação", "Negociação, alocação e rateio", "Controle dos ativos financeiros"],
+    "resposta_correta": 1,
+    "explicacao": "Administrador tem responsabilidade legal do fundo."
+  },
+  {
+    "id": "fundos-008",
+    "tema": "fundos",
+    "enunciado": "A taxa de administração de um fundo afeta:",
+    "alternativas": ["A rentabilidade diária dos títulos", "O patrimônio líquido diário", "A rentabilidade mensal apenas", "O PL apenas no último dia útil"],
+    "resposta_correta": 1,
+    "explicacao": "Taxa reduz o PL diariamente."
+  },
+  {
+    "id": "fundos-009",
+    "tema": "fundos",
+    "enunciado": "Qual é o objetivo principal de um fundo DI?",
+    "alternativas": ["Replicar a variação do CDI investindo em títulos públicos de curto prazo", "Alcançar ganhos com ações de empresas de crescimento", "Maximizar retornos por meio de derivativos de alto risco", "Investir apenas em debêntures incentivadas"],
+    "resposta_correta": 0,
+    "explicacao": "Fundo DI replica variação do CDI."
+  },
+  {
+    "id": "fundos-010",
+    "tema": "fundos",
+    "enunciado": "Qual indicador mede a perda máxima projetada de uma carteira em determinado horizonte e nível de confiança?",
+    "alternativas": ["Sharpe", "VaR", "Tracking Error", "Beta"],
+    "resposta_correta": 1,
+    "explicacao": "VaR = Value at Risk, perda máxima esperada."
+  },
+  {
+    "id": "fundos-011",
+    "tema": "fundos",
+    "enunciado": "Para maior diversificação entre pares de ativos com correlações A-B=0.9, A-C=-0.1, B-C=0.3, a ordem do mais diversificado para o menos é:",
+    "alternativas": ["A-B, A-C, B-C", "A-C, B-C, A-B", "B-C, A-B, A-C", "A-C, A-B, B-C"],
+    "resposta_correta": 1,
+    "explicacao": "Correlação negativa = maior diversificação."
+  },
+  {
+    "id": "fundos-012",
+    "tema": "fundos",
+    "enunciado": "VaR de carteira com 95% de confiança = R$ 500. Isso indica:",
+    "alternativas": ["5% de possibilidade de perder mais de R$ 500 por dia", "5% de possibilidade de perder até R$ 500 em 252 dias", "95% de possibilidade de perder até R$ 500 por dia", "5% de possibilidade de perder mais de R$ 500 após 252 dias"],
+    "resposta_correta": 0,
+    "explicacao": "VaR = perda máxima esperada com X% de confiança."
   },
   {
     "id": "renda-fixa-001",
     "tema": "renda_fixa",
     "enunciado": "Qual título do Tesouro possui remuneração atrelada à taxa Selic?",
-    "alternativas": [
-      "LTN",
-      "NTN-B",
-      "LFT",
-      "NTN-F"
-    ],
+    "alternativas": ["LTN", "NTN-B", "LFT", "NTN-F"],
     "resposta_correta": 2,
     "explicacao": "A LFT é pós-fixada à taxa Selic, reduzindo risco de marcação a mercado."
   },
@@ -42,25 +107,55 @@
     "id": "renda-fixa-002",
     "tema": "renda_fixa",
     "enunciado": "Qual produto é coberto pelo FGC?",
-    "alternativas": [
-      "Ações",
-      "Debêntures simples",
-      "Caderneta de poupança",
-      "Fundos de investimento"
-    ],
+    "alternativas": ["Ações", "Debêntures simples", "Caderneta de poupança", "Fundos de investimento"],
     "resposta_correta": 2,
     "explicacao": "Poupança é produto elegível ao FGC, ao contrário de fundos ou ações."
+  },
+  {
+    "id": "renda-fixa-003",
+    "tema": "renda_fixa",
+    "enunciado": "Sobre debêntures, é CORRETO afirmar:",
+    "alternativas": ["Podem ser emitidas por bancos de investimento", "São emitidas com prazo máximo de 360 dias", "Têm suas garantias especificadas na escritura", "Destinam-se exclusivamente ao financiamento de capital de giro"],
+    "resposta_correta": 2,
+    "explicacao": "Escritura define garantias (real, flutuante, etc)."
+  },
+  {
+    "id": "renda-fixa-004",
+    "tema": "renda_fixa",
+    "enunciado": "Um investidor qualificado PF quer renda fixa sem IR. Qual produto indicar?",
+    "alternativas": ["FIDC", "FIP", "CRI", "Letra Financeira"],
+    "resposta_correta": 2,
+    "explicacao": "CRI/CRA são isentos de IR para pessoa física."
+  },
+  {
+    "id": "renda-fixa-005",
+    "tema": "renda_fixa",
+    "enunciado": "A LFT é indexada:",
+    "alternativas": ["À taxa SELIC, negociada ao par com ágio/deságio", "À taxa DI, ao par apenas", "À taxa SELIC, ao par apenas", "À taxa DI, com ágio/deságio"],
+    "resposta_correta": 0,
+    "explicacao": "LFT = SELIC pós-fixado."
+  },
+  {
+    "id": "renda-fixa-006",
+    "tema": "renda_fixa",
+    "enunciado": "Qual é a característica principal de um título prefixado do Tesouro Direto?",
+    "alternativas": ["Remuneração atrelada ao IPCA", "Remuneração conhecida no momento da aplicação", "Rentabilidade variável conforme o CDI", "Isenção total de imposto de renda"],
+    "resposta_correta": 1,
+    "explicacao": "Prefixado = taxa conhecida na compra."
+  },
+  {
+    "id": "renda-fixa-007",
+    "tema": "renda_fixa",
+    "enunciado": "Qual risco é mais associado a debêntures de infraestrutura?",
+    "alternativas": ["Risco de crédito do emissor", "Risco de liquidez derivado da isenção fiscal", "Risco cambial elevado", "Ausência de marcação a mercado"],
+    "resposta_correta": 0,
+    "explicacao": "Debêntures têm risco de crédito do emissor."
   },
   {
     "id": "renda-variavel-001",
     "tema": "renda_variavel",
     "enunciado": "Qual é a alíquota de IR para operações de day trade em ações?",
-    "alternativas": [
-      "10%",
-      "15%",
-      "17,5%",
-      "20%"
-    ],
+    "alternativas": ["10%", "15%", "17,5%", "20%"],
     "resposta_correta": 3,
     "explicacao": "Day trade em ações é tributado a 20% sobre o ganho líquido."
   },
@@ -68,25 +163,63 @@
     "id": "renda-variavel-002",
     "tema": "renda_variavel",
     "enunciado": "Qual limite mensal de vendas garante isenção de IR para pessoa física em ações?",
-    "alternativas": [
-      "R$ 10 mil",
-      "R$ 15 mil",
-      "R$ 20 mil",
-      "R$ 30 mil"
-    ],
+    "alternativas": ["R$ 10 mil", "R$ 15 mil", "R$ 20 mil", "R$ 30 mil"],
     "resposta_correta": 2,
     "explicacao": "Vendas até R$ 20 mil no mês permitem isenção em operações comuns."
+  },
+  {
+    "id": "renda-variavel-003",
+    "tema": "renda_variavel",
+    "enunciado": "Dividendos são:",
+    "alternativas": ["Distribuição de lucro, isento de IR", "Juros sobre capital próprio, isentos", "Bonificação paga em dinheiro", "Desdobramento que distribui lucro"],
+    "resposta_correta": 0,
+    "explicacao": "Dividendos sempre são isentos de IR."
+  },
+  {
+    "id": "renda-variavel-004",
+    "tema": "renda_variavel",
+    "enunciado": "O que é bonificação?",
+    "alternativas": ["Distribuição gratuita de novas ações", "Distribuição de debêntures gratuitas", "Oferta de ações a preço de mercado", "Oferta de ações abaixo do mercado"],
+    "resposta_correta": 0,
+    "explicacao": "Bonificação = ações gratuitas."
+  },
+  {
+    "id": "renda-variavel-005",
+    "tema": "renda_variavel",
+    "enunciado": "Qual é a principal diferença entre ações ordinárias e preferenciais no Brasil?",
+    "alternativas": ["Preferenciais sempre têm voto, ordinárias não", "Ordinárias garantem voto, preferenciais priorizam dividendos", "Preferenciais são isentas de IR, ordinárias não", "Ordinárias são negociadas apenas no mercado de balcão"],
+    "resposta_correta": 1,
+    "explicacao": "ON = voto, PN = preferência em dividendos."
+  },
+  {
+    "id": "renda-variavel-006",
+    "tema": "renda_variavel",
+    "enunciado": "Investidor comprou bônus de subscrição. Isso equivale a:",
+    "alternativas": ["Compra de put", "Venda de put", "Venda de call", "Compra de call"],
+    "resposta_correta": 3,
+    "explicacao": "Bônus de subscrição = call de ação."
+  },
+  {
+    "id": "renda-variavel-007",
+    "tema": "renda_variavel",
+    "enunciado": "O lançador de uma opção de compra tem:",
+    "alternativas": ["Direito de comprar ao preço de mercado", "Obrigação de comprar ao preço de mercado", "Direito de vender ao preço de exercício", "Obrigação de vender ao preço de exercício"],
+    "resposta_correta": 3,
+    "explicacao": "Lançador CALL = obrigação de vender."
+  },
+  {
+    "id": "renda-variavel-008",
+    "tema": "renda_variavel",
+    "enunciado": "Qual instrumento é mais adequado para travar o preço futuro de uma commodity?",
+    "alternativas": ["Swap de taxas de juros", "Opção de compra", "Contrato futuro", "Debênture conversível"],
+    "resposta_correta": 2,
+    "explicacao": "Contrato futuro trava preço de commodities."
   },
   {
     "id": "pld-001",
     "tema": "pld",
     "enunciado": "Qual o prazo mínimo recomendado para atualização cadastral de clientes de alto risco?",
-    "alternativas": [
-      "A cada 12 meses",
-      "A cada 24 meses",
-      "Somente quando o cliente solicitar",
-      "Não há prazo definido"
-    ],
+    "alternativas": ["A cada 12 meses", "A cada 24 meses", "Somente quando o cliente solicitar", "Não há prazo definido"],
     "resposta_correta": 0,
     "explicacao": "Clientes de alto risco exigem revisões frequentes, tipicamente anuais."
   },
@@ -94,25 +227,103 @@
     "id": "pld-002",
     "tema": "pld",
     "enunciado": "Qual órgão recebe comunicações de operações suspeitas no Brasil?",
-    "alternativas": [
-      "CVM",
-      "BACEN",
-      "COAF",
-      "SUSEP"
-    ],
+    "alternativas": ["CVM", "BACEN", "COAF", "SUSEP"],
     "resposta_correta": 2,
     "explicacao": "Operações suspeitas devem ser comunicadas ao COAF."
+  },
+  {
+    "id": "pld-003",
+    "tema": "pld",
+    "enunciado": "Quais são as fases da lavagem de dinheiro, na ordem correta?",
+    "alternativas": ["Integração, ocultação, colocação", "Colocação, ocultação, integração", "Ocultação, colocação, integração", "Colocação, integração, ocultação"],
+    "resposta_correta": 1,
+    "explicacao": "1-Colocação 2-Ocultação 3-Integração."
+  },
+  {
+    "id": "pld-004",
+    "tema": "pld",
+    "enunciado": "Dois diretores analisam uma fusão não listada. Essa informação:",
+    "alternativas": ["É pública, pode usar", "É pública mas não pode usar", "É insider, pode usar", "É insider, não pode usar até divulgação pública"],
+    "resposta_correta": 3,
+    "explicacao": "Informação relevante não pública = insider."
+  },
+  {
+    "id": "pld-005",
+    "tema": "pld",
+    "enunciado": "Para um PEP estrangeiro permanente, a instituição deve:",
+    "alternativas": ["Solicitar declaração expressa do cliente sobre sua classificação", "Não solicitar informação em entidade governamental no exterior", "Dar a mesma atenção às operações de não-PEP", "Montar base de dados comerciais de todos PEP"],
+    "resposta_correta": 0,
+    "explicacao": "Circular BACEN exige declaração de PEP."
+  },
+  {
+    "id": "pld-006",
+    "tema": "pld",
+    "enunciado": "São atribuições da CVM:",
+    "alternativas": ["Decretar o recesso do SELIC", "Fiscalizar e inspecionar as companhias abertas", "Fiscalizar permanentemente as atividades do mercado imobiliário", "Suspender a negociação de determinado título público federal"],
+    "resposta_correta": 1,
+    "explicacao": "CVM fiscaliza companhias abertas, bolsas, fundos."
+  },
+  {
+    "id": "pld-007",
+    "tema": "pld",
+    "enunciado": "NÃO é atividade das corretoras/distribuidoras:",
+    "alternativas": ["Prover recursos para financiamento de empresas no curto e médio prazo", "Intermediar oferta pública (IPO)", "Exercer funções de agente fiduciário", "Comprar e vender títulos por conta própria e de terceiros"],
+    "resposta_correta": 0,
+    "explicacao": "Financiamento é função de bancos, não corretoras."
+  },
+  {
+    "id": "pld-008",
+    "tema": "pld",
+    "enunciado": "O principal objetivo do Banco Central (LC 179/2021) é:",
+    "alternativas": ["Assegurar a estabilidade de preços", "Suavizar as flutuações do nível de atividade econômica", "Fomentar o pleno emprego", "Definir a meta da inflação"],
+    "resposta_correta": 0,
+    "explicacao": "Meta principal = estabilidade de preços (inflação)."
+  },
+  {
+    "id": "pld-009",
+    "tema": "pld",
+    "enunciado": "Qual é o objetivo principal dos códigos ANBIMA de regulação?",
+    "alternativas": ["Substituir a legislação federal", "Estabelecer boas práticas e padrões para o mercado", "Aumentar a carga tributária sobre fundos", "Definir limites de crédito para bancos públicos"],
+    "resposta_correta": 1,
+    "explicacao": "ANBIMA é autorregulação com códigos de boas práticas."
+  },
+  {
+    "id": "pld-010",
+    "tema": "pld",
+    "enunciado": "Qual é o canal recomendado para reporte de desvios éticos?",
+    "alternativas": ["Contato informal com colegas", "Linha ética ou canal de denúncias independente", "Redes sociais da instituição", "Comunicação direta com o cliente"],
+    "resposta_correta": 1,
+    "explicacao": "Canal de denúncias independente é o recomendado."
+  },
+  {
+    "id": "pld-011",
+    "tema": "pld",
+    "enunciado": "Qual documento comprova a diligência na identificação do beneficiário final?",
+    "alternativas": ["Termo de confidencialidade do cliente", "Contrato social atualizado ou documentação equivalente", "Comprovante de residência do administrador", "Declaração anual de imposto de renda"],
+    "resposta_correta": 1,
+    "explicacao": "Contrato social comprova beneficiário final."
+  },
+  {
+    "id": "pld-012",
+    "tema": "pld",
+    "enunciado": "Qual comportamento é considerado alerta de lavagem de dinheiro?",
+    "alternativas": ["Aplicações recorrentes compatíveis com renda", "Resgates e aportes fracionados para evitar reporte", "Atualização cadastral anual", "Assinatura de termo de ciência de risco"],
+    "resposta_correta": 1,
+    "explicacao": "Fracionamento para evitar reporte é sinal de alerta."
+  },
+  {
+    "id": "pld-013",
+    "tema": "pld",
+    "enunciado": "Qual fator NÃO faz parte do processo de suitability?",
+    "alternativas": ["Objetivos de investimento", "Perfil de risco", "Prazo de investimento", "Escolha do gerente responsável"],
+    "resposta_correta": 3,
+    "explicacao": "Escolha do gerente não faz parte do suitability."
   },
   {
     "id": "tributacao-001",
     "tema": "tributacao",
     "enunciado": "Qual é a alíquota inicial da tabela regressiva de IR aplicada em previdência?",
-    "alternativas": [
-      "35%",
-      "30%",
-      "25%",
-      "20%"
-    ],
+    "alternativas": ["35%", "30%", "25%", "20%"],
     "resposta_correta": 0,
     "explicacao": "Na tabela regressiva, a alíquota começa em 35% e cai ao longo do tempo."
   },
@@ -120,25 +331,63 @@
     "id": "tributacao-002",
     "tema": "tributacao",
     "enunciado": "Qual produto possui isenção de IR para pessoa física?",
-    "alternativas": [
-      "Fundos de ações",
-      "LCI",
-      "Debêntures simples",
-      "Fundos multimercado"
-    ],
+    "alternativas": ["Fundos de ações", "LCI", "Debêntures simples", "Fundos multimercado"],
     "resposta_correta": 1,
     "explicacao": "LCIs e LCAs são isentas de IR para pessoa física."
+  },
+  {
+    "id": "tributacao-003",
+    "tema": "tributacao",
+    "enunciado": "Em fundo RF Longo Prazo, o come-cotas ocorre:",
+    "alternativas": ["Semestral, com alíquota de 15%", "Mensal, com alíquota de 20%", "Mensal, com alíquota variável", "Semestral (maio/nov), com alíquota de 15%"],
+    "resposta_correta": 3,
+    "explicacao": "Come-cotas semestral (mai/nov), LP=15%."
+  },
+  {
+    "id": "tributacao-004",
+    "tema": "tributacao",
+    "enunciado": "FII - IR sobre dividendos para pessoa física:",
+    "alternativas": ["Retido na fonte, 15%", "Isento", "20% sobre o ganho", "22,5% regressivo"],
+    "resposta_correta": 1,
+    "explicacao": "Dividendos de FII são isentos para PF; ganho de capital é tributado a 20%."
+  },
+  {
+    "id": "tributacao-005",
+    "tema": "tributacao",
+    "enunciado": "Cliente resgatou fundo RF curto prazo após 26 dias. Qual a alíquota de IR?",
+    "alternativas": ["22,5%", "20%", "17,5%", "15%"],
+    "resposta_correta": 1,
+    "explicacao": "Curto prazo até 6 meses = 20%."
+  },
+  {
+    "id": "tributacao-006",
+    "tema": "tributacao",
+    "enunciado": "O aumento da taxa de juros pelo COPOM ocasiona:",
+    "alternativas": ["Diminuição da demanda de moeda e diminuição da inflação", "Diminuição da demanda e aumento da inflação", "Aumento da demanda e diminuição da inflação", "Aumento da demanda e aumento da inflação"],
+    "resposta_correta": 0,
+    "explicacao": "Juros ↑ → demanda moeda ↓ → inflação ↓."
+  },
+  {
+    "id": "tributacao-007",
+    "tema": "tributacao",
+    "enunciado": "Qual é a alíquota de IOF para resgates em renda fixa realizados no mesmo dia da aplicação?",
+    "alternativas": ["0%", "3% sobre o rendimento", "6% sobre o rendimento", "96% sobre o rendimento"],
+    "resposta_correta": 3,
+    "explicacao": "IOF no dia 1 = 96%, decresce até 0% no dia 30."
+  },
+  {
+    "id": "tributacao-008",
+    "tema": "tributacao",
+    "enunciado": "Qual é a alíquota inicial de IR na tabela regressiva de fundos de curto prazo?",
+    "alternativas": ["15%", "20%", "22,5%", "25%"],
+    "resposta_correta": 2,
+    "explicacao": "Tabela começa em 22,5% até 180 dias."
   },
   {
     "id": "previdencia-001",
     "tema": "previdencia",
     "enunciado": "Qual limite de dedução do PGBL na declaração completa do IR?",
-    "alternativas": [
-      "6% da renda bruta",
-      "8% da renda bruta",
-      "12% da renda bruta",
-      "20% da renda bruta"
-    ],
+    "alternativas": ["6% da renda bruta", "8% da renda bruta", "12% da renda bruta", "20% da renda bruta"],
     "resposta_correta": 2,
     "explicacao": "Contribuições ao PGBL podem ser deduzidas até 12% da renda bruta anual."
   },
@@ -146,13 +395,24 @@
     "id": "previdencia-002",
     "tema": "previdencia",
     "enunciado": "No VGBL, o imposto de renda incide sobre qual base?",
-    "alternativas": [
-      "Somente sobre o valor investido",
-      "Somente sobre os rendimentos",
-      "Sobre valor investido e rendimentos",
-      "Não há incidência de IR"
-    ],
+    "alternativas": ["Somente sobre o valor investido", "Somente sobre os rendimentos", "Sobre valor investido e rendimentos", "Não há incidência de IR"],
     "resposta_correta": 1,
     "explicacao": "No VGBL, a tributação incide apenas sobre os rendimentos na saída."
+  },
+  {
+    "id": "previdencia-003",
+    "tema": "previdencia",
+    "enunciado": "A portabilidade de PGBL progressivo para VGBL regressivo:",
+    "alternativas": ["Pode ser feita, haverá IR na transferência", "Pode ser feita, não haverá IR", "Só é permitida se o atual fosse regressivo", "Não é permitida"],
+    "resposta_correta": 1,
+    "explicacao": "Portabilidade sempre sem IR."
+  },
+  {
+    "id": "previdencia-004",
+    "tema": "previdencia",
+    "enunciado": "Cliente quer acumular máximo em 30 anos no VGBL. Deve escolher:",
+    "alternativas": ["Menor carregamento, maior rentabilidade, menor reversão", "Menor carregamento, menor rentabilidade, maior reversão", "Menor carregamento, maior rentabilidade, maior reversão", "Maior carregamento, maior rentabilidade, menor reversão"],
+    "resposta_correta": 2,
+    "explicacao": "Acumulação: menor custo, maior retorno, maior reversão."
   }
 ]
