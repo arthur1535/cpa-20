@@ -1,0 +1,47 @@
+[
+  {
+    "id": "fundos-001",
+    "tema": "Fundos de Investimento",
+    "enunciado": "Qual é a periodicidade do come-cotas nos fundos de renda fixa?",
+    "alternativas": [
+      "Mensal",
+      "Semestral (maio e novembro)",
+      "Anual",
+      "A cada trimestre"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "O come-cotas reduz cotas em maio e novembro para fundos de curto e longo prazo.",
+    "dificuldade": "facil",
+    "fonte": "Conteúdo oficial Anbima"
+  },
+  {
+    "id": "pld-001",
+    "tema": "Compliance e PLD",
+    "enunciado": "Qual o prazo mínimo para atualização cadastral de clientes conforme melhores práticas de PLD?",
+    "alternativas": [
+      "A cada 12 meses para todos os perfis",
+      "A cada 18 meses para todos os perfis",
+      "A cada 12 meses para alto risco e 24 meses para demais",
+      "Atualização somente quando o cliente solicitar"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "Perfis de alto risco exigem revisões mais frequentes; clientes padrão podem ser revisados a cada 24 meses.",
+    "dificuldade": "media",
+    "fonte": "Práticas de mercado e materiais preparatórios"
+  },
+  {
+    "id": "renda-variavel-001",
+    "tema": "Renda Variável",
+    "enunciado": "Qual é a alíquota de IR para operações de day trade em ações?",
+    "alternativas": [
+      "10%",
+      "15%",
+      "17,5%",
+      "20%"
+    ],
+    "resposta_correta": 3,
+    "explicacao": "Operações de day trade em ações são tributadas a 20% sobre o ganho de capital.",
+    "dificuldade": "facil",
+    "fonte": "Tributação de renda variável"
+  }
+]
