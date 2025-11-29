@@ -55,6 +55,72 @@ def carregar_historico(caminho: Path) -> pd.DataFrame:
     return df
 
 
+def gerar_questoes_para_revisao(
+    df_historico: pd.DataFrame,
+    questoes_path: Path,
+    destino: Path,
+    min_taxa_erro: float = 0.5,
+    max_questoes: int = 30,
+) -> int:
+    """Gera um CSV com questões que mais exigem revisão.
+
+    A seleção prioriza todas as questões com taxa de erro acima do limite e,
+    na ausência desse critério, utiliza as mais erradas até o limite informado.
+
+    Args:
+        df_historico: DataFrame retornado por :func:`carregar_historico`.
+        questoes_path: caminho para o banco completo de questões.
+        destino: caminho onde o CSV filtrado será salvo.
+        min_taxa_erro: limite mínimo de taxa de erro para entrar no arquivo.
+        max_questoes: quantidade máxima de questões a incluir.
+
+    Returns:
+        Quantidade de questões gravadas no arquivo de revisão.
+    """
+
+    if "id_questao" not in df_historico.columns:
+        raise ValueError("Coluna 'id_questao' não encontrada no histórico.")
+
+    if not questoes_path.exists():
+        raise FileNotFoundError(
+            f"Banco de questões não encontrado em {questoes_path}. Gere o arquivo primeiro."
+        )
+
+    desempenho = (
+        df_historico.groupby("id_questao")["acerto_bool"]
+        .agg(total_respostas="count", acertos="sum")
+        .reset_index()
+    )
+    desempenho["erros"] = desempenho["total_respostas"] - desempenho["acertos"]
+    desempenho["taxa_erro"] = desempenho["erros"] / desempenho["total_respostas"]
+
+    candidatos = desempenho[desempenho["taxa_erro"] > min_taxa_erro]
+    if candidatos.empty:
+        candidatos = desempenho.sort_values("erros", ascending=False).head(max_questoes)
+    else:
+        candidatos = candidatos.sort_values(
+            ["taxa_erro", "erros"], ascending=False
+        ).head(max_questoes)
+
+    ids_para_revisao = set(candidatos["id_questao"].tolist())
+
+    questoes_df = pd.read_csv(questoes_path)
+    filtradas = questoes_df[questoes_df["id"].isin(ids_para_revisao)].copy()
+    if filtradas.empty:
+        raise ValueError("Nenhuma questão correspondente encontrada para revisão.")
+
+    filtradas = filtradas.merge(
+        candidatos[["id_questao", "erros", "taxa_erro", "total_respostas"]],
+        left_on="id",
+        right_on="id_questao",
+        how="left",
+    ).drop(columns=["id_questao"])
+
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    filtradas.to_csv(destino, index=False)
+    return len(filtradas)
+
+
 def calcular_taxas(df: pd.DataFrame) -> Dict[str, object]:
     """Calcula estatísticas de acerto gerais e por grupos."""
     total = len(df)
@@ -175,6 +241,24 @@ def main() -> None:
     gerar_relatorio(relatorio_path, stats)
 
     salvar_graficos(stats, relatorio_path.parent)
+
+    try:
+        destino_revisao = base_dir / "dados" / "questoes_para_revisao.csv"
+        questoes_path = base_dir / "dados" / "questoes_cpa20.csv"
+        quantidade = gerar_questoes_para_revisao(
+            df,
+            questoes_path,
+            destino_revisao,
+        )
+    except Exception as exc:  # pragma: no cover - feedback amigável
+        print(
+            f"Não foi possível gerar o arquivo de revisão: {exc}",
+            file=sys.stderr,
+        )
+    else:
+        print(
+            f"Arquivo de revisão criado com {quantidade} questões: {destino_revisao}"
+        )
 
 
 if __name__ == "__main__":

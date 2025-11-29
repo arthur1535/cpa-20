@@ -7,9 +7,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">CPA-20 Quiz</div>
-    <div class="tag">Treine, revise e acompanhe seu ritmo</div>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="tag">Projeto CPA-20</p>
+      <h1>Radar de Estudos – pontos fortes e fracos</h1>
+      <p class="subtitle">Centralize seus tópicos-chave, avalie sua confiança e veja onde focar antes da prova.</p>
+      <div class="hero__actions">
+        <button id="focusWeakBtn" class="btn btn--primary">Focar nos pontos fracos</button>
+        <button id="revisionModeBtn" class="btn btn--ghost">Modo revisão (questões mais erradas)</button>
+        <button id="resetBtn" class="btn btn--ghost">Limpar progresso</button>
+      </div>
+    </div>
+    <div class="hero__stats" id="overviewStats"></div>
   </header>
 
   <main class="page">
@@ -67,30 +76,28 @@
       </footer>
     </section>
 
-    <section class="card card--result" id="result-card" hidden>
-      <div class="result-header">
-        <div>
-          <p class="section-kicker">Resultado</p>
-          <h2 id="score-title">Desempenho</h2>
-          <p class="muted" id="score-subtitle"></p>
-        </div>
-        <div class="score" id="score-percentage">0%</div>
+  <section class="panel panel--secondary">
+    <header class="panel__header">
+      <div>
+        <p class="tag tag--muted">Prática rápida</p>
+        <h2>Questões para revisão focada</h2>
+        <p class="subtitle">Carregue o conjunto padrão ou ative o modo revisão para estudar apenas as questões mais erradas.</p>
       </div>
+    </header>
+    <div class="question-actions">
+      <button id="defaultQuestionsBtn" class="btn btn--ghost">Usar conjunto padrão</button>
+      <button id="revisionQuestionsBtn" class="btn btn--primary">Ativar modo revisão</button>
+    </div>
+    <p id="questionStatus" class="meta question-status">Carregando conjunto inicial...</p>
+    <div id="questionList" class="question-list"></div>
+  </section>
 
-      <div class="result-grid">
-        <div class="result-box">
-          <p class="label">Total de acertos</p>
-          <p class="value" id="score-count"></p>
-        </div>
-        <div class="result-box">
-          <p class="label">Questões erradas</p>
-          <p class="value" id="wrong-count"></p>
-        </div>
-      </div>
-
-      <div class="result-errors">
-        <h3>Erros por tema</h3>
-        <ul id="error-list" class="error-list"></ul>
+  <section class="panel panel--secondary">
+    <header class="panel__header">
+      <div>
+        <p class="tag tag--muted">Checklist rápido</p>
+        <h2>Respostas que você precisa ter na ponta da língua</h2>
+        <p class="subtitle">Complete as caixas abaixo para sinalizar que domina cada item crítico da prova.</p>
       </div>
 
       <div class="result-actions">
