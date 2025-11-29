@@ -510,6 +510,105 @@ d) 5% possibilidade perder mais de R$ 500 após 252 dias
 
 ---
 
+## 📸 Pendências de transcrição (lote mais recente de imagens)
+
+Anotei abaixo os enunciados que chegaram por imagem para registrar no banco. Eles ainda precisam ser transcritos e conferidos com cuidado antes de irem para as seções temáticas:
+
+- Questão 09 – lavagem de dinheiro: sujeitos obrigados a comunicar operações em moeda nacional e vedação a operações em cripto sem regulamentação.
+- Questão 10 – serviços prestados pela B3 em operações à vista (negociação e registro versus normatização/autorregulação).
+- Questão 11 – formação de preço teórico via recibo de integralização de ações e identificação da alternativa incorreta.
+- Questão 12 – cálculo do retorno de um ativo estruturado que distribui 1 bônus de subscrição para cada 10 ações, considerando valor do bônus e novas ações emitidas.
+- Questão 13 – viés comportamental (efeito de recência) de investidor que muda alocação ao ver notícia de alta de índice de referência.
+- Questão 14 – Teoria das Finanças Comportamentais: reconhecimento da Falácia do Jogador em aposta após sequência de quedas.
+- Questão 15 – afirmações sobre investimentos sustentáveis e condições para preferências ambientais, sociais e de governança.
+- Questão 16 – fundos sociais criados após desastre nuclear: exceções de enquadramento e prazo máximo de permanência nesses fundos.
+- Questão 20 – nota do Bacen sobre aquecimento econômico e inflação: medidas possíveis de política monetária e de crédito.
+- Questão 21 – cálculo do valor presente de fluxo de caixa esperado para investimento com prêmio de risco.
+- Questão 25 – captação de recursos via IPO/OPA e identificação do mercado em que a operação ocorre.
+- Questão 26 – títulos de renda fixa que negociam com deságio sobre o valor de face (ex.: Notas do Tesouro Nacional).
+- Questão 28 – comparação entre Cédula de Produto Rural e CDB quanto a regime jurídico e tributação.
+- Questão 30 – cenários de alta/baixa em operações com derivativos e respectivas perdas/ganhos.
+- Questão 31 – estratégia com opções que pode gerar maior perda para o investidor (venda descoberta de opções de compra ou venda).
+- Questão 32 – afirmações sobre derivativos simples e liquidação financeira.
+- Questão 34 – prazo máximo para pagamento de resgate de fundos de investimento (regra geral e exceções).
+- Questão 36 – identificação do fundo com maior rentabilidade líquida considerando datas de cotização e pagamento.
+- Questão 39 – critérios de avaliação do Índice de Sustentabilidade Empresarial (ISE B3).
+- Questão 40 – afirmações sobre direitos e deveres dos cotistas em fundos (proibição de resgate antecipado, emissão de cotas, recompra de cotas, obtenção de incentivos fiscais).
+- Questão 43 – incidência de IOF em resgates durante período de carência de fundo de investimentos.
+- Questão 45 – alíquota de IR aplicada a fundo de renda variável com ganho de R$ 200,00 em resgate.
+- Questão 46 – Código ANBIMA de Administração de Recursos: controle para validar confiabilidade do valor da cota (conciliação de posições).
+- Questão 22 – juros sobre capital próprio (tratamento contábil e distribuição).
+- Questão 23 – ADRs/BDRs e composição dos recibos negociados no exterior.
+- Questão 24 – responsabilidade pelo IR retido na fonte em proventos de companhias com ADRs.
+- Questão 32 – compensação de perdas de IR em operações de swap.
+- Questão 33 – tributação de um COE com retorno de 15% em três anos.
+- Questão 34 – obrigatoriedade de agente fiduciário em ofertas de notas promissórias (Resolução CVM 160/22).
+- Questão 35 – resultado de um index swap recebendo dólar e pagando CDI após queda de 20% do dólar.
+- Questão 36 – características de fundos de investimento (pequenos investidores e títulos na carteira).
+- Questão 37 – poderes do gestor para suspender resgates versus prazos remanescentes dos cotistas.
+- Questão 38 – tributação de fundos passivos com benchmark no CDI para pessoa física.
+- Questão 40 – escolha de fundos de renda fixa (pré, pós e indexados à Selic) para queda de juros.
+- Questão 41 – afirmações sobre swaps e FIDC, incluindo liquidação financeira e séries ordinária/subordinada.
+- Questão 42 – regras de um FIDC: classes de cotas, série Sênior/Mezanino/Subordinada e enquadramento mínimo.
+- Questão 43 – diferenças entre classificação de risco em agências especializadas e em trading de derivativos.
+- Questão 44 – responsabilidades do gestor segundo o Código ANBIMA (controles, desinvestimentos, distribuição).
+- Questão 45 – deveres do administrador fiduciário conforme o Código ANBIMA (descobertos, liquidez e custódia).
+- Questão 46 – limites para administrador de fundo de investimento associado à ANBIMA (carteira de crédito privado, escritório, patrimônio mínimo e contratação de recursos humanos).
+- Questão 50 – regime tributável ou compensável nos planos PGBL/VGBL e forma de dedução.
+- Questão 51 – deduções de PGBL para contribuinte casado com dependentes e renda de R$ 400 mil.
+- Questão 52 – estatística básica: média/mediana de um conjunto de dados (ex.: 3, 4, 6, 9, 12).
+- Questão 54 – variação de preço de título zero cupom de R$ 1.000,00 após alta de 1% na taxa de juros.
+- Questão 55 – medida de risco de mercado para avaliação de carteira (variação, volatilidade ou VaR).
+- Questão 56 – cálculo de retorno de carteiras A/B/C versus Ibovespa em cinco dias; identificar melhor desempenho.
+- Questão 57 – impacto de medidas citadas sobre uma carteira frente ao seu benchmark (variação e resultado relativo).
+- Questão 58 – efeito do aumento da duration de Macaulay sobre sensibilidade a mudanças nas taxas de juros.
+- Questão 59 – uso do stop loss em uma carteira de investimentos (mecanismo e propósito).
+- Questão 60 – comparação de indicadores (desvio padrão e tracking error) para identificar chance de superar benchmark.
+- Questão 01 (Simulado 04) – competências do CMN quanto a políticas monetária/cambial/creditícia.
+- Questão 02 (Simulado 04) – objetivos do BACEN após LC 179/2021 (estabilidade de preços, pleno emprego, inflação).
+- Questão 03 (Simulado 04) – exemplos de fontes/recursos de lavagem de dinheiro e classificação correta.
+- Questão 04 (Simulado 04) – instituições autorizadas como administradores fiduciários de fundos (item incorreto).
+- Questão 05 (Simulado 04) – atividades permitidas a corretoras/distribuidoras de valores.
+- Questão 06 (Simulado 04) – erros de compliance/ética em instituição financeira (risco de imagem/operacional/legal).
+- Questão 07 (Simulado 04) – contrato de corretagem firmado com parente de funcionário e potencial conflito de interesses.
+- Questão 08 (Simulado 04) – obrigações de comunicação e cadastro à luz da Lei de Lavagem de Dinheiro (continuação do simulado).
+- Questão 53 – relação entre coeficiente de correlação e coeficiente de determinação em estatística descritiva.
+- Questão 54 – comparação de rentabilidade entre CDB e títulos públicos federais negociados no mercado secundário.
+- Questão 55 – escolha entre carteiras de fundos (A, B ou C) conforme perfil de risco dos clientes da instituição.
+- Questão 56 – decisão de alocação de um investidor próximo da aposentadoria considerando aversão ao risco.
+- Questão 57 – uso de fundos de investimento por pessoas jurídicas e efeitos de inadimplência sobre saques.
+- Questão 58 – interpretação do Value at Risk (VaR) a 95% de confiança em horizonte de 20 dias para uma carteira.
+- Questão 59 – impacto de um ativo que reduz índice de Sharpe, mas eleva índice de Treynor, na carteira de investimentos.
+- Questão 01 (Simulado 05) – atribuições do Conselho Monetário Nacional (papel moeda, coordenação de políticas e meta de inflação).
+- Questão 02 (Simulado 05) – avaliação do perfil de um cliente que busca orientação de profissional certificado e as respostas adequadas.
+- Questão 05 (Simulado 05) – enquadramento de investidor qualificado aplicando via private banking em três bancos distintos.
+- Questão 06 (Simulado 05) – riscos associados a erros em processos internos e envio de dados para o banco errado.
+- Questão 07 (Simulado 05) – conduta de funcionários em situações de conflito de interesses e orientação de segurança ao cliente.
+- Questão 08 (Simulado 05) – comunicação obrigatória em casos de bloqueio de ativos solicitada por organismos internacionais.
+- Questão 10 (Simulado 05) – identificação de ordens atípicas na corretora com base em movimentações fora do perfil do cliente.
+- Questão 11 (Simulado 05) – classificação de investidores (qualificado, profissional ou público geral) conforme requisitos de patrimônio e certificações.
+- Questão 12 (Simulado 05) – comparação de risco e liquidez entre CDBs de instituições financeiras de portes diferentes.
+- Questão 13 (Simulado 05) – limites mínimos para oferta de private (family office) segundo o Código ANBIMA de Distribuição.
+- Questão 14 (Simulado 05) – distribuição proporcional de proventos em BDRs, certificados de recebíveis e outros títulos estruturados.
+- Questão 15 (Simulado 05) – limites de alocação em renda variável para clientes conservadores (perfil de suitability).
+- Questão 16 (Simulado 05) – leitura de gráfico de retorno e volatilidade para comparar linhas de fronteira eficiente.
+- Questão 17 (Simulado 05) – estratégia baseada na Teoria de Finanças Comportamentais (efeito disposição e representatividade).
+- Questão 18 (Simulado 05) – regime de capitalização simples e incidência de juros sobre capital e juros acumulados.
+- Questão 19 (Simulado 05) – impacto de vendas de títulos com cupom prefixado em ambiente de queda de taxas de juros.
+- Questão 20 (Simulado 05) – compensação de perdas em day trade e limites para abatimento de imposto de renda.
+- Questão 21 (Simulado 05) – cálculo de preço médio após aquisição de ações ex-direito e ajustes por proventos.
+- Questão 22 (Simulado 05) – tratamento tributário de juros sobre capital próprio (JCP) no mercado acionário.
+- Questão 23 (Simulado 05) – juro sobre capital próprio como remuneração aos acionistas a taxas inferiores às de mercado.
+- Questão 24 (Simulado 05) – condição de ação ex-direito e negociação sem direito a determinado provento.
+- Questão 25 (Simulado 05) – cálculo de lucro/prejuízo com compra e venda de ações e tributação de curto prazo.
+- Questão 39 (Simulado 05) – índice de sustentabilidade empresarial (ISE B3) e critérios de seleção das companhias.
+- Questão 40 (Simulado 05) – escolha de fundos de investimento para clientes com aversão a risco e liquidez imediata.
+- Questão 41 (Simulado 05) – entendimento de ofertas públicas e risco de crédito em debêntures e notas promissórias.
+- Questão 42 (Simulado 05) – consequências de não cumprimento de normas em fundos de investimento quanto a classificação de cotas.
+- Questão 43 (Simulado 05) – cotização e prazos de pagamento de resgate em fundos de investimento com recursos no exterior.
+
+Use estes rascunhos para retomar a digitação completa das questões e incorporar as respostas/gabaritos na estrutura acima.
+
 ## DICAS DE RESOLUÇÃO
 
 ✅ **Sempre leia todas alternativas**
