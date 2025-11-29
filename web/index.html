@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar de Estudos CPA-20</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="tag">Projeto CPA-20</p>
+      <h1>Radar de Estudos – pontos fortes e fracos</h1>
+      <p class="subtitle">Centralize seus tópicos-chave, avalie sua confiança e veja onde focar antes da prova.</p>
+      <div class="hero__actions">
+        <button id="focusWeakBtn" class="btn btn--primary">Focar nos pontos fracos</button>
+        <button id="resetBtn" class="btn btn--ghost">Limpar progresso</button>
+      </div>
+    </div>
+    <div class="hero__stats" id="overviewStats"></div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <header class="panel__header">
+        <div>
+          <p class="tag tag--muted">Visão geral</p>
+          <h2>Mapa de confiança por tema</h2>
+          <p class="subtitle">Use o controle deslizante em cada tópico para marcar sua confiança. Itens marcados como <strong>Fortes</strong> somem do foco de revisão rápida.</p>
+        </div>
+        <div class="filters">
+          <label class="chip"><input type="checkbox" id="showOnlyWeak" /> Mostrar apenas fracos</label>
+          <label class="chip"><input type="checkbox" id="showOnlyMedium" /> Mostrar médios</label>
+        </div>
+      </header>
+      <div id="topicGrid" class="topics"></div>
+    </section>
+  </main>
+
+  <section class="panel panel--secondary">
+    <header class="panel__header">
+      <div>
+        <p class="tag tag--muted">Checklist rápido</p>
+        <h2>Respostas que você precisa ter na ponta da língua</h2>
+        <p class="subtitle">Complete as caixas abaixo para sinalizar que domina cada item crítico da prova.</p>
+      </div>
+    </header>
+    <div id="checklistBoard" class="checklist-board"></div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <p class="tag tag--muted">Referências do repositório</p>
+      <ul class="links">
+        <li><a href="../estudos/resumo-executivo-temas.md">Resumo executivo</a></li>
+        <li><a href="../estudos/flashcards-estudo.md">Flashcards</a></li>
+        <li><a href="../estudos/questoes-por-tema.md">Questões por tema</a></li>
+        <li><a href="../estudos/guia-cronograma-30-dias.md">Cronograma de 30 dias</a></li>
+      </ul>
+    </div>
+    <p class="credit">Construa seu ciclo: revisar → testar → ajustar.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
