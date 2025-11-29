@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radar de Estudos CPA-20</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Simulado CPA-20</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
@@ -21,22 +21,60 @@
     <div class="hero__stats" id="overviewStats"></div>
   </header>
 
-  <main class="layout">
-    <section class="panel">
-      <header class="panel__header">
-        <div>
-          <p class="tag tag--muted">Visão geral</p>
-          <h2>Mapa de confiança por tema</h2>
-          <p class="subtitle">Use o controle deslizante em cada tópico para marcar sua confiança. Itens marcados como <strong>Fortes</strong> somem do foco de revisão rápida.</p>
-        </div>
-        <div class="filters">
-          <label class="chip"><input type="checkbox" id="showOnlyWeak" /> Mostrar apenas fracos</label>
-          <label class="chip"><input type="checkbox" id="showOnlyMedium" /> Mostrar médios</label>
-        </div>
-      </header>
-      <div id="topicGrid" class="topics"></div>
+  <main class="page">
+    <section class="card" id="setup-card">
+      <div>
+        <p class="section-kicker">Configurar simulado</p>
+        <h1>Monte seu treino rápido</h1>
+        <p class="muted">Escolha quantas questões quer responder e filtre por tema para reforçar seu foco.</p>
+      </div>
+      <form id="setup-form" class="setup-form">
+        <label class="field">
+          <span>Quantidade de questões</span>
+          <select id="question-count" required>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Tema</span>
+          <select id="theme">
+            <option value="todos">Todos os temas</option>
+            <option value="fundos">Fundos de Investimento</option>
+            <option value="renda_fixa">Renda Fixa</option>
+            <option value="renda_variavel">Renda Variável</option>
+            <option value="pld">Compliance e PLD</option>
+            <option value="tributacao">Tributação</option>
+            <option value="previdencia">Previdência</option>
+          </select>
+        </label>
+
+        <button class="primary" type="submit">Começar simulado</button>
+      </form>
     </section>
-  </main>
+
+    <section class="card card--quiz" id="quiz-card" hidden>
+      <header class="quiz-header">
+        <div>
+          <p id="quiz-theme" class="chip"></p>
+          <h2 id="quiz-progress">Questão 1 de 1</h2>
+        </div>
+        <div class="pill" id="progress-pill">0% concluído</div>
+      </header>
+
+      <div class="question-area">
+        <p id="question-text" class="question"></p>
+        <div id="alternatives" class="options"></div>
+      </div>
+
+      <footer class="quiz-footer">
+        <div id="feedback" class="feedback"></div>
+        <button id="next-btn" class="secondary" disabled>Próxima</button>
+      </footer>
+    </section>
 
   <section class="panel panel--secondary">
     <header class="panel__header">
@@ -61,22 +99,13 @@
         <h2>Respostas que você precisa ter na ponta da língua</h2>
         <p class="subtitle">Complete as caixas abaixo para sinalizar que domina cada item crítico da prova.</p>
       </div>
-    </header>
-    <div id="checklistBoard" class="checklist-board"></div>
-  </section>
 
-  <footer class="footer">
-    <div>
-      <p class="tag tag--muted">Referências do repositório</p>
-      <ul class="links">
-        <li><a href="../estudos/resumo-executivo-temas.md">Resumo executivo</a></li>
-        <li><a href="../estudos/flashcards-estudo.md">Flashcards</a></li>
-        <li><a href="../estudos/questoes-por-tema.md">Questões por tema</a></li>
-        <li><a href="../estudos/guia-cronograma-30-dias.md">Cronograma de 30 dias</a></li>
-      </ul>
-    </div>
-    <p class="credit">Construa seu ciclo: revisar → testar → ajustar.</p>
-  </footer>
+      <div class="result-actions">
+        <button id="review-errors" class="primary">Refazer apenas erros</button>
+        <button id="new-quiz" class="secondary">Novo simulado</button>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>

@@ -341,144 +341,180 @@ function loadState() {
     console.error('Erro ao carregar progresso', err);
     return {};
   }
+  const data = await response.json();
+  state.allQuestions = data;
 }
 
-function saveState(state) {
-  localStorage.setItem(storageKey, JSON.stringify(state));
+function shuffle(list) {
+  const copy = [...list];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
 }
 
-function classify(score) {
-  if (score >= 80) return { label: 'Forte', className: 'badge--strong' };
-  if (score >= 50) return { label: 'Em progresso', className: 'badge--medium' };
-  return { label: 'Precisa reforço', className: 'badge--weak' };
+function formatTheme(theme) {
+  const map = {
+    fundos: 'Fundos de Investimento',
+    renda_fixa: 'Renda Fixa',
+    renda_variavel: 'Renda Variável',
+    pld: 'Compliance e PLD',
+    tributacao: 'Tributação',
+    previdencia: 'Previdência',
+  };
+  return map[theme] || theme;
 }
 
-function renderStats(state) {
-  const statsEl = document.getElementById('overviewStats');
-  const scores = topics.map((t) => state[t.id]?.score ?? 40);
-  const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
-  const weak = scores.filter((s) => s < 50).length;
-  const medium = scores.filter((s) => s >= 50 && s < 80).length;
-  const strong = scores.filter((s) => s >= 80).length;
-
-  statsEl.innerHTML = `
-    <div class="stat">
-      <div class="stat__label">Confiança média</div>
-      <div class="stat__value">${avg}%</div>
-    </div>
-    <div class="stat stat--bad">
-      <div class="stat__label">Precisa reforço</div>
-      <div class="stat__value">${weak}</div>
-    </div>
-    <div class="stat stat--warn">
-      <div class="stat__label">Em progresso</div>
-      <div class="stat__value">${medium}</div>
-    </div>
-    <div class="stat stat--good">
-      <div class="stat__label">Fortes</div>
-      <div class="stat__value">${strong}</div>
-    </div>
-  `;
+function resetQuizView() {
+  document.getElementById('quiz-card').hidden = true;
+  document.getElementById('result-card').hidden = true;
+  document.getElementById('setup-card').hidden = false;
 }
 
-function renderTopics(state) {
-  const grid = document.getElementById('topicGrid');
-  const showWeak = document.getElementById('showOnlyWeak').checked;
-  const showMedium = document.getElementById('showOnlyMedium').checked;
+function startQuiz(filteredQuestions) {
+  state.currentQuestions = filteredQuestions;
+  state.currentIndex = 0;
+  state.answers = [];
+  state.wrongPool = [];
+  document.getElementById('setup-card').hidden = true;
+  document.getElementById('result-card').hidden = true;
+  document.getElementById('quiz-card').hidden = false;
+  renderQuestion();
+}
 
-  grid.innerHTML = '';
+function renderQuestion() {
+  const question = state.currentQuestions[state.currentIndex];
+  const progressText = `Questão ${state.currentIndex + 1} de ${state.currentQuestions.length}`;
 
-  topics.forEach((topic) => {
-    const topicState = state[topic.id] || { score: 40, notes: '' };
-    const { label, className } = classify(topicState.score);
+  document.getElementById('quiz-progress').textContent = progressText;
+  document.getElementById('quiz-theme').textContent = formatTheme(question.tema);
+  document.getElementById('question-text').textContent = question.enunciado;
+  document.getElementById('feedback').textContent = '';
+  document.getElementById('feedback').className = 'feedback';
 
-    if (showWeak && topicState.score >= 50) return;
-    if (showMedium && (topicState.score < 50 || topicState.score >= 80)) return;
+  const percentage = Math.round((state.currentIndex / state.currentQuestions.length) * 100);
+  document.getElementById('progress-pill').textContent = `${percentage}% concluído`;
 
-    const card = document.createElement('article');
-    card.className = 'topic-card';
+  const optionsContainer = document.getElementById('alternatives');
+  optionsContainer.innerHTML = '';
 
-    card.innerHTML = `
-      <div class="topic-card__header">
-        <div>
-          <p class="tag">${topic.weight}</p>
-          <h3>${topic.title}</h3>
-          <p>${topic.description}</p>
-        </div>
-        <div class="meta">
-          <span class="badge ${className}">${label}</span>
-        </div>
-      </div>
-      <div class="meta">Pontos críticos: ${topic.focus.join(' · ')}</div>
-      <ul class="list">${topic.focus.map((f) => `<li>${f}</li>`).join('')}</ul>
-      <div class="meta">Números-chave: ${topic.numbers.join(' • ')}</div>
-      <a class="resource-link" href="${topic.link}">Rever no material</a>
-      <div class="control">
-        <div class="slider-row">
-          <label for="score-${topic.id}">Confiança</label>
-          <input type="range" min="0" max="100" step="5" id="score-${topic.id}" value="${topicState.score}" />
-          <span class="value-chip" id="value-${topic.id}">${topicState.score}%</span>
-        </div>
-        <textarea class="notes" id="notes-${topic.id}" placeholder="Notas rápidas, pontos fracos, gatilhos de revisão...">${topicState.notes || ''}</textarea>
-      </div>
+  question.alternativas.forEach((alt, idx) => {
+    const button = document.createElement('button');
+    button.className = 'option-btn';
+    button.type = 'button';
+    button.dataset.index = idx;
+    button.innerHTML = `
+      <span class="option-letter">${String.fromCharCode(65 + idx)}</span>
+      <span>${alt}</span>
     `;
-
-    grid.appendChild(card);
-
-    const slider = card.querySelector(`#score-${topic.id}`);
-    const valueChip = card.querySelector(`#value-${topic.id}`);
-    const notes = card.querySelector(`#notes-${topic.id}`);
-
-    slider.addEventListener('input', () => {
-      const score = Number(slider.value);
-      valueChip.textContent = `${score}%`;
-      state[topic.id] = { ...(state[topic.id] || {}), score };
-      saveState(state);
-      renderStats(state);
-      renderTopics(state);
-    });
-
-    notes.addEventListener('change', () => {
-      state[topic.id] = { ...(state[topic.id] || {}), notes: notes.value };
-      saveState(state);
-    });
+    button.addEventListener('click', () => handleAnswer(button, idx));
+    optionsContainer.appendChild(button);
   });
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.disabled = true;
+  nextBtn.textContent = state.currentIndex === state.currentQuestions.length - 1 ? 'Ver resultado' : 'Próxima';
+  nextBtn.onclick = () => goToNext();
 }
 
-function renderChecklist(state) {
-  const board = document.getElementById('checklistBoard');
-  const saved = state.checklist || {};
-  board.innerHTML = '';
+function handleAnswer(button, selectedIndex) {
+  const question = state.currentQuestions[state.currentIndex];
+  const options = Array.from(document.querySelectorAll('.option-btn'));
 
-  checklistItems.forEach((item, idx) => {
-    const row = document.createElement('label');
-    row.className = 'checklist-item';
-    const id = `chk-${idx}`;
-    const checked = Boolean(saved[id]);
-    row.innerHTML = `
-      <input type="checkbox" id="${id}" ${checked ? 'checked' : ''}/>
-      <span>${item}</span>
-    `;
-
-    row.querySelector('input').addEventListener('change', (e) => {
-      saved[id] = e.target.checked;
-      state.checklist = saved;
-      saveState(state);
-    });
-
-    board.appendChild(row);
+  options.forEach((opt) => {
+    opt.disabled = true;
+    opt.classList.remove('correct', 'incorrect');
   });
+
+  const isCorrect = Number(question.resposta_correta) === selectedIndex;
+  button.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+  const correctBtn = options[Number(question.resposta_correta)];
+  if (correctBtn && correctBtn !== button) {
+    correctBtn.classList.add('correct');
+  }
+
+  const feedback = document.getElementById('feedback');
+  if (isCorrect) {
+    feedback.textContent = 'Resposta correta!';
+    feedback.classList.add('success');
+  } else {
+    feedback.textContent = 'Resposta incorreta. Revise e tente novamente.';
+    feedback.classList.add('error');
+  }
+
+  state.answers.push({
+    id: question.id,
+    tema: question.tema,
+    correct: isCorrect,
+  });
+
+  if (!isCorrect) {
+    state.wrongPool.push(question);
+  }
+
+  document.getElementById('next-btn').disabled = false;
 }
 
-function bindActions(state) {
-  document.getElementById('focusWeakBtn').addEventListener('click', () => {
-    document.getElementById('showOnlyWeak').checked = true;
-    document.getElementById('showOnlyMedium').checked = false;
-    renderTopics(state);
-  });
+function goToNext() {
+  const isLast = state.currentIndex === state.currentQuestions.length - 1;
+  if (isLast) {
+    showResults();
+    return;
+  }
+  state.currentIndex += 1;
+  renderQuestion();
+}
 
-  document.getElementById('showOnlyWeak').addEventListener('change', () => renderTopics(state));
-  document.getElementById('showOnlyMedium').addEventListener('change', () => renderTopics(state));
+function summarizeErrors() {
+  const counts = {};
+  state.answers
+    .filter((a) => !a.correct)
+    .forEach((a) => {
+      counts[a.tema] = (counts[a.tema] || 0) + 1;
+    });
+  return counts;
+}
+
+function showResults() {
+  const total = state.answers.length;
+  const correct = state.answers.filter((a) => a.correct).length;
+  const percent = total ? Math.round((correct / total) * 100) : 0;
+  const errorsByTheme = summarizeErrors();
+
+  document.getElementById('quiz-card').hidden = true;
+  document.getElementById('result-card').hidden = false;
+
+  document.getElementById('score-title').textContent = percent >= 80 ? 'Ótimo trabalho!' : 'Continue praticando';
+  document.getElementById('score-subtitle').textContent = `Você acertou ${correct} de ${total} questões.`;
+  document.getElementById('score-percentage').textContent = `${percent}%`;
+  document.getElementById('score-count').textContent = `${correct} / ${total}`;
+  document.getElementById('wrong-count').textContent = `${total - correct}`;
+
+  const list = document.getElementById('error-list');
+  list.innerHTML = '';
+  if (Object.keys(errorsByTheme).length === 0) {
+    const item = document.createElement('li');
+    item.textContent = 'Sem erros. Excelente!';
+    list.appendChild(item);
+  } else {
+    Object.entries(errorsByTheme).forEach(([theme, qty]) => {
+      const item = document.createElement('li');
+      item.innerHTML = `<span>${formatTheme(theme)}</span><strong>${qty}</strong>`;
+      list.appendChild(item);
+    });
+  }
+}
+
+function filterQuestions(theme, quantity) {
+  const pool = theme === 'todos'
+    ? [...state.allQuestions]
+    : state.allQuestions.filter((q) => q.tema === theme);
+
+  const selected = shuffle(pool).slice(0, quantity);
+  return selected;
+}
 
   const loadRevision = () => loadQuestionBank(revisionQuestionSource);
   document.getElementById('revisionModeBtn').addEventListener('click', loadRevision);
